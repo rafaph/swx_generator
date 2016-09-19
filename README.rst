@@ -1,18 +1,25 @@
-# SWX-GENERATOR
+########################################
+SWX-GENERATOR
+########################################
 
 * Version: 1.0.0
 
-## Dependencies:
+=============
+Dependencies:
+=============
 
-Django == 1.7.X+
+Django >= 1.7.*
 
-## Installation:
+=============
+Installation:
+=============
 
-Add 'swx-generator' to your `INSTALLED_APPS`.
+Add **swx_generator** to your **INSTALLED_APPS**.
 
-## Avaliable commands:
+=============
+Usage
+=============
 
-```sh
-python manage.py create_model project name
-```
+.. code-block:: bash
 
+    $ python manage.py create_model project name
