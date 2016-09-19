@@ -1,20 +1,11 @@
 from __future__ import unicode_literals, print_function
 
-from os import path
-
-from django.conf import settings
 from django.core.management.base import BaseCommand, make_option, CommandError
+
 from swx_generator import utils
 
 
 class Command(BaseCommand):
-    """
-    clean_orphan_obj_perms command is a tiny wrapper around
-    :func:`guardian.utils.clean_orphan_obj_perms`.
-    Usage::
-        $ python manage.py clean_orphan_obj_perms
-        Removed 11 object permission entries with no targets
-    """
     help = """
     Create a model:\n
         python manage.py generate <app_name> --model=<model_name>\n
@@ -47,9 +38,15 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         self.__validate_input(*args, **kwargs)
+
         if kwargs['model'] is not None:
             utils.create_model(args[0], kwargs['model'])
+            if kwargs['verbosity'] > 0:
+                self.stdout.write(
+                    '\x1b[6;30;42m{0}\x1b[0m'.format(
+                        'Model %s created with success.' % kwargs['model']
+                    )
+                )
+
         if kwargs['view'] is not None:
             pass
-        if kwargs['verbosity'] > 0:
-            print('Model or View created with success.')
