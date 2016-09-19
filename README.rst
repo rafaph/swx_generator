@@ -32,7 +32,7 @@ Installation
 Usage
 ======
 
-It's possible create, for now, a model and view files using the **generate** command.
+It's possible to create, for now, a ``model`` and ``view`` files using the **generate** command.
 
 ---------------
 Create a model:
