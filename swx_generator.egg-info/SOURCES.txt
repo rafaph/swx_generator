@@ -1,0 +1,15 @@
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+swx_generator/__init__.py
+swx_generator/utils.py
+swx_generator.egg-info/PKG-INFO
+swx_generator.egg-info/SOURCES.txt
+swx_generator.egg-info/dependency_links.txt
+swx_generator.egg-info/top_level.txt
+swx_generator/management/__init__.py
+swx_generator/management/commands/__init__.py
+swx_generator/management/commands/generate.py
+swx_generator/tpls/python/model.pytpl
