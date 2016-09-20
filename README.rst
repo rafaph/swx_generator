@@ -28,6 +28,17 @@ Installation
 
 * Add **swx_generator** to your ``INSTALLED_APPS``.
 
+==================
+Avaliable Commands
+==================
+
+=============================================================  ==================
+Command                                                        Function
+=============================================================  ==================
+``python manage.py generate <AppName> --model=<ModelName>``    Create a model
+``python manage.py generate <AppName> --view=<view_name>``     Create a view
+=============================================================  ==================
+
 ======
 Usage
 ======
@@ -49,7 +60,7 @@ The command above will create a model in the ``AppName``. Following three steps:
 * Add the model import in ``__init__.py`` file, like:
 
     .. code-block:: python
-        
+
         from .model_name import ModelName
 
 --------------
@@ -64,15 +75,3 @@ The command above will create a view file in the ``AppName``. Follow two steps:
 
 * Verify if package **views** exists in your ``AppName`` package, if it's not, it will be created.
 * Create view file with **view_name**, always in **snake case** notation.
-
-==================
-Avaliable Commands
-==================
-
-
-==========                                                      ==================
-Command                                                         What do
-==========                                                      ==================
-``python manage.py generate <AppName> --model=<ModelName>``     Create a model
-``python manage.py generate <AppName> --view=<view_name>``      Create a view
-==========                                                      ==================
