@@ -8,7 +8,7 @@ from shutil import copyfile
 BASE_DIR = path.dirname(path.dirname(__file__))
 
 
-def camel_case_to_snake_case(value):
+def __camel_case_to_snake_case(value):
     return camel_case_to_spaces(value).replace(' ', '_')
 
 
@@ -22,7 +22,7 @@ def create_model(app_name, model_name):
     if not path.isdir(models_path):
         mkdir(models_path)
 
-    model_name_snake_case = camel_case_to_snake_case(model_name)
+    model_name_snake_case = __camel_case_to_snake_case(model_name)
     model_file_name = '%s.py' % model_name_snake_case
     model_path = path.join(
         models_path,
@@ -76,7 +76,7 @@ def create_view(app_name, view_name):
         with open(path.join(views_path, '__init__.py'), 'w') as f:
             f.write('')
 
-    view_name_snake_case = camel_case_to_snake_case(view_name)
+    view_name_snake_case = __camel_case_to_snake_case(view_name)
     view_file_name = '%s.py' % view_name_snake_case
     view_path = path.join(
         views_path,
