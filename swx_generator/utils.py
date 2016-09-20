@@ -3,6 +3,7 @@ from django.template import Template, Context
 from django.utils.text import camel_case_to_spaces
 from django.conf import settings
 from os import path, mkdir
+from shutil import copyfile
 
 BASE_DIR = path.dirname(path.dirname(__file__))
 
@@ -17,20 +18,21 @@ def create_model(app_name, model_name):
         app_name,
         'models'
     )
-
+    init_path = path.join(models_path, '__init__.py')
     if not path.isdir(models_path):
         mkdir(models_path)
-        with open(path.join(models_path, '__init__.py'), 'wb') as f:
-            f.write('')
 
-    model_file_name = '%s.py' % camel_case_to_snake_case(model_name)
+    model_name_snake_case = camel_case_to_snake_case(model_name)
+    model_file_name = '%s.py' % model_name_snake_case
     model_path = path.join(
         models_path,
         model_file_name
     )
 
     if path.isfile(model_path):
-        raise CommandError('The model file %r already exists' % model_file_name)
+        raise CommandError(
+            'The model file "%s" already exists' % model_file_name
+        )
 
     model_template_path = path.join(
         BASE_DIR,
@@ -50,3 +52,51 @@ def create_model(app_name, model_name):
 
     with open(model_path, 'w') as f:
         f.write(template_rendered)
+
+    with open(init_path, 'a') as f:
+        f.write(
+            'from .{0} import {1}\n'.format(
+                model_name_snake_case,
+                model_name
+            )
+        )
+
+
+def create_view(app_name, view_name):
+    views_path = path.join(
+        settings.BASE_DIR,
+        app_name,
+        'views'
+    )
+
+    if not path.isdir(views_path):
+        mkdir(
+            views_path
+        )
+        with open(path.join(views_path, '__init__.py'), 'w') as f:
+            f.write('')
+
+    view_name_snake_case = camel_case_to_snake_case(view_name)
+    view_file_name = '%s.py' % view_name_snake_case
+    view_path = path.join(
+        views_path,
+        view_file_name
+    )
+
+    if path.isfile(view_path):
+        raise CommandError(
+            'The view file "%s" already exists' % view_file_name
+        )
+
+    view_template_path = path.join(
+        BASE_DIR,
+        'swx_generator',
+        'tpls',
+        'python',
+        'view.pytpl'
+    )
+
+    copyfile(
+        src=view_template_path,
+        dst=view_path
+    )

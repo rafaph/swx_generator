@@ -49,4 +49,10 @@ class Command(BaseCommand):
                 )
 
         if kwargs['view'] is not None:
-            pass
+            utils.create_view(args[0], kwargs['view'])
+            if kwargs['verbosity'] > 0:
+                self.stdout.write(
+                    '\x1b[6;30;42m{0}\x1b[0m'.format(
+                        'View %s created with success.' % kwargs['view']
+                    )
+                )

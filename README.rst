@@ -52,4 +52,27 @@ The command above will create a model in the ``AppName``. Following three steps:
         
         from .model_name import ModelName
 
-    
+--------------
+Create a view:
+--------------
+
+.. code-block:: bash
+
+    $ python manage.py generate <AppName> --view=<view_name>
+
+The command above will create a view file in the ``AppName``. Follow two steps:
+
+* Verify if package **views** exists in your ``AppName`` package, if it's not, it will be created.
+* Create view file with **view_name**, always in **snake case** notation.
+
+==================
+Avaliable Commands
+==================
+
+
+==========                                                      ==================
+Command                                                         What do
+==========                                                      ==================
+``python manage.py generate <AppName> --model=<ModelName>``     Create a model
+``python manage.py generate <AppName> --view=<view_name>``      Create a view
+==========                                                      ==================

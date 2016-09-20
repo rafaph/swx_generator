@@ -13,3 +13,4 @@ swx_generator/management/__init__.py
 swx_generator/management/commands/__init__.py
 swx_generator/management/commands/generate.py
 swx_generator/tpls/python/model.pytpl
+swx_generator/tpls/python/view.pytpl
