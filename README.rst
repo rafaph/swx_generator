@@ -24,7 +24,7 @@ Installation
 
 .. code-block:: bash
 
-    $ pip install swx_generator-1.0.0.tar.gz
+    $ pip install swx_generator-1.0.1.tar.gz
 
 * Add **swx_generator** to your ``INSTALLED_APPS``.
 
