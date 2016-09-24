@@ -73,8 +73,6 @@ def create_view(app_name, view_name):
         mkdir(
             views_path
         )
-        with open(path.join(views_path, '__init__.py'), 'w') as f:
-            f.write('')
 
     view_name_snake_case = __camel_case_to_snake_case(view_name)
     view_file_name = '%s.py' % view_name_snake_case
@@ -100,3 +98,11 @@ def create_view(app_name, view_name):
         src=view_template_path,
         dst=view_path
     )
+
+    init_path = path.join(views_path, '__init__.py')
+    with open(init_path, 'a') as f:
+        f.write(
+            'from . import {0}\n'.format(
+                view_name_snake_case
+            )
+        )
