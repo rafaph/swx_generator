@@ -2,7 +2,7 @@
 SWX-GENERATOR
 ##############
 
-* Version: 1.0.1
+* Version: 1.0.2
 
 =============
 Dependencies
@@ -24,7 +24,7 @@ Installation
 
 .. code-block:: bash
 
-    $ pip install swx_generator-1.0.1.tar.gz
+    $ pip install swx_generator-1.0.2.tar.gz
 
 * Add **swx_generator** to your ``INSTALLED_APPS``.
 
