@@ -81,6 +81,10 @@
     ```bash
     tar xfz simcon-1.0.0.tar.gz
     ```
+    * Parar o serviço `simcon`.
+    ```bash
+    service simcon stop
+    ```
     * Rodar o script `install.sh` localizado em `simcon-1.0.6/deploy`.
     ```bash
     ./install.sh
@@ -95,10 +99,18 @@
     # ...
     daemon taskset -c 5,6 $UWSGI_BIN $UWSGI_OPTIONS
     ```
+    * Inicie o serviço novamente.
+    ```bash
+    service simcon start
+    ```
 * SIMGPH
     * Extrair o arquivo `simcon-3.3.8.tar.gz`.
     ```bash
     tar xfz simgph-3.3.8.tar.gz
+    ```
+    * Parar o serviço `simgph`.
+    ```bash
+    service simgph stop
     ```
     * Rodar o script `install.sh` localizado em `simgph-3.3.8/deploy`.
     ```bash
@@ -113,6 +125,10 @@
     # depois
     # ...
     daemon taskset -c 5,6 $UWSGI_BIN $UWSGI_OPTIONS
+    ```
+    * Inicie o serviço novamente.
+    ```bash
+    service simgph start
     ```
 
 ## Links para download das instalações:
