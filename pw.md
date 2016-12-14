@@ -117,6 +117,6 @@
 
 ## Links para download das instalações:
 
-[https://www.dropbox.com/sh/17c7nuxk8b1jdbh/AADq7lyGlAOMj2bRGN5Af9eca?dl=0](Dropbox)
+[Dropbox](https://www.dropbox.com/sh/17c7nuxk8b1jdbh/AADq7lyGlAOMj2bRGN5Af9eca?dl=0)
 
-[https://drive.google.com/open?id=0B3TLG2GZRMq8MHFWYU1rQW9IMkk](Google Drive)
+[Google Drive](https://drive.google.com/open?id=0B3TLG2GZRMq8MHFWYU1rQW9IMkk)
